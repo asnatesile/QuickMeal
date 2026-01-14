@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>QuickMeal – Recipes From Your Fridge</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="app">
+    <header class="app-header">
+      <div class="brand">
+        <div class="logo">🍳</div>
+        <div>
+          <h1>QuickMeal</h1>
+          <p class="tagline">Quick choices, quicker meals!</p>
+        </div>
+      </div>
+      <button class="primary-btn outline" id="demo-fill-btn">
+        Fill with sample fridge
+      </button>
+    </header>
+
+    <main class="app-main">
+      <!-- Ingredient Input / Pantry Section -->
+      <section class="card pantry-card">
+        <h2>Your fridge</h2>
+        <p class="help-text">
+          Add ingredients you have at home. Press <strong>Enter</strong> or tap
+          <strong>Add</strong> after each one.
+        </p>
+
+        <div class="ingredient-input-row">
+          <input
+            type="text"
+            id="ingredient-input"
+            placeholder="e.g. chicken, tomato, cheese"
+            autocomplete="off"
+          />
+          <button class="primary-btn" id="add-ingredient-btn">Add</button>
+        </div>
+        <p class="micro-text">Tip: keep it simple – one ingredient per add.</p>
+
+        <div class="ingredient-tags" id="ingredient-list">
+          <!-- Dynamic ingredient chips -->
+        </div>
+
+        <div class="quick-add">
+          <h3>Quick add</h3>
+          <div class="quick-add-list">
+            <!-- Expanded quick add ingredients -->
+            <button class="pill-btn" data-ingredient="egg">Eggs</button>
+            <button class="pill-btn" data-ingredient="milk">Milk</button>
+            <button class="pill-btn" data-ingredient="cheese">Cheese</button>
+            <button class="pill-btn" data-ingredient="yogurt">Yogurt</button>
+            <button class="pill-btn" data-ingredient="butter">Butter</button>
+            <button class="pill-btn" data-ingredient="tomato">Tomato</button>
+            <button class="pill-btn" data-ingredient="onion">Onion</button>
+            <button class="pill-btn" data-ingredient="garlic">Garlic</button>
+            <button class="pill-btn" data-ingredient="bell pepper">Bell pepper</button>
+            <button class="pill-btn" data-ingredient="carrot">Carrot</button>
+            <button class="pill-btn" data-ingredient="broccoli">Broccoli</button>
+            <button class="pill-btn" data-ingredient="spinach">Spinach</button>
+            <button class="pill-btn" data-ingredient="mushrooms">Mushrooms</button>
+            <button class="pill-btn" data-ingredient="potato">Potato</button>
+            <button class="pill-btn" data-ingredient="rice">Rice</button>
+            <button class="pill-btn" data-ingredient="pasta">Pasta</button>
+            <button class="pill-btn" data-ingredient="bread">Bread</button>
+            <button class="pill-btn" data-ingredient="tortilla">Tortilla</button>
+            <button class="pill-btn" data-ingredient="chicken">Chicken</button>
+            <button class="pill-btn" data-ingredient="beef">Beef</button>
+            <button class="pill-btn" data-ingredient="pork">Pork</button>
+            <button class="pill-btn" data-ingredient="tuna">Tuna</button>
+            <button class="pill-btn" data-ingredient="tofu">Tofu</button>
+            <button class="pill-btn" data-ingredient="chickpeas">Chickpeas</button>
+            <button class="pill-btn" data-ingredient="beans">Beans</button>
+            <button class="pill-btn" data-ingredient="lentils">Lentils</button>
+            <button class="pill-btn" data-ingredient="oats">Oats</button>
+            <button class="pill-btn" data-ingredient="avocado">Avocado</button>
+            <button class="pill-btn" data-ingredient="cucumber">Cucumber</button>
+            <button class="pill-btn" data-ingredient="lemon">Lemon</button>
+            <button class="pill-btn" data-ingredient="lime">Lime</button>
+            <button class="pill-btn" data-ingredient="soy sauce">Soy sauce</button>
+            <button class="pill-btn" data-ingredient="olive oil">Olive oil</button>
+          </div>
+        </div>
+
+        <div class="actions-row">
+          <button class="ghost-btn full-width" id="clear-ingredients-btn">
+            Clear fridge
+          </button>
+        </div>
+
+      </section>
+
+      <!-- Filters Section -->
+      <section class="card filters-card">
+        <h2>Preferences</h2>
+        <div class="filters-grid">
+          <div class="field">
+            <label for="diet-select">Diet</label>
+            <select id="diet-select">
+              <option value="any">Any</option>
+              <option value="vegetarian">Vegetarian</option>
+              <option value="vegan">Vegan</option>
+              <option value="gluten-free">Gluten-free</option>
+            </select>
+          </div>
+
+          <div class="field">
+            <label for="time-select">Time to cook</label>
+            <select id="time-select">
+              <option value="any">Any</option>
+              <option value="15">Under 15 min</option>
+              <option value="30">Under 30 min</option>
+              <option value="45">Under 45 min</option>
+            </select>
+          </div>
+
+          <div class="field">
+            <label for="complexity-select">Difficulty</label>
+            <select id="complexity-select">
+              <option value="any">Any</option>
+              <option value="easy">Easy</option>
+              <option value="medium">Medium</option>
+              <option value="hard">Ambitious</option>
+            </select>
+          </div>
+
+          <div class="field">
+            <label for="portions-select">Portions</label>
+            <select id="portions-select">
+              <option value="1">1 portion</option>
+              <option value="2" selected>2 portions</option>
+              <option value="3">3 portions</option>
+              <option value="4">4 portions</option>
+              <option value="5">5 portions</option>
+              <option value="6">6 portions</option>
+            </select>
+          </div>
+      </div>
+
+      </section>
+
+      <!-- Recipes Section -->
+      <section class="card recipes-card">
+        <div class="recipes-header">
+          <div>
+            <h2>Recipes</h2>
+            <p class="help-text" id="recipes-subtitle">
+              Add ingredients to see smart recipe ideas update live.
+            </p>
+          </div>
+          <span class="pill-counter" id="recipe-count-badge">0</span>
+        </div>
+
+        <div id="recipes-container" class="recipes-grid">
+          <!-- Recipe cards will be injected here -->
+        </div>
+      </section>
+    </main>
+
+    <footer class="app-footer">
+      <p>
+        Concept by <strong>QuickMeal</strong>. No account, no waste – just
+        smarter cooking.
+      </p>
+    </footer>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
